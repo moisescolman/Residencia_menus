@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"e7a3507f649d4d91ae1daaf4b1f64920","collectionName":"tipo_comida","type":"collection"}
