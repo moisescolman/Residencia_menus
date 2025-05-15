@@ -49,14 +49,7 @@ La exportación contiene las siguientes **colecciones**: :contentReference[oaici
 
 ---
 
-## Uso
-
-1. **Restaurar la base de datos**  
-   ```bash
-   mongorestore --drop --db residencia_menus ./mongodb_export/residencia_menus
-
-
-## Prerrequisitos y Versiones para clonar y utilizar el proyecto
+## Uso - Prerrequisitos y Versiones para Clonar y Utilizar el Proyecto
 
 Para seguir este manual, necesitarás tener instalados los siguientes componentes:
 
