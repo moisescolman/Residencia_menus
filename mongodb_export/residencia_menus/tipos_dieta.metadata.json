@@ -1,1 +1,1 @@
-{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"11f982feaa9847e4bd739aca9cbab784","collectionName":"tipos_dieta","type":"collection"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"44829a45718c4ab1bc0dedbfda93d977","collectionName":"tipos_dieta","type":"collection"}
