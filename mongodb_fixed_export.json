@@ -1,0 +1,4095 @@
+{
+  "database": "residencia_menus",
+  "exported_at": "2025-05-15T12:25:02.171115",
+  "collections": {
+    "roles": [
+      {
+        "_id": "rol1",
+        "nombre": "Administrador",
+        "permisos": [
+          "crear_asignaciones",
+          "editar_asignaciones",
+          "eliminar_asignaciones",
+          "ver_asignaciones",
+          "gestionar_residentes",
+          "gestionar_usuarios",
+          "gestionar_roles",
+          "ver_reportes",
+          "configurar_sistema"
+        ]
+      },
+      {
+        "_id": "rol2",
+        "nombre": "Encargado de menús",
+        "permisos": [
+          "crear_asignaciones",
+          "editar_asignaciones",
+          "eliminar_asignaciones",
+          "ver_asignaciones",
+          "ver_residentes"
+        ]
+      },
+      {
+        "_id": "rol3",
+        "nombre": "Empresa de catering",
+        "permisos": [
+          "ver_dietas",
+          "ver_alergenos",
+          "ver_menus"
+        ]
+      },
+      {
+        "_id": "rol4",
+        "nombre": "Usuario consulta",
+        "permisos": [
+          "ver_asignaciones",
+          "ver_residentes",
+          "ver_dietas",
+          "ver_menus"
+        ]
+      }
+    ],
+    "catering": [
+      {
+        "_id": "cat01",
+        "nombreEmpresa": "Catering Gasca",
+        "personaContacto": "María Pérez",
+        "telefono": "600123456",
+        "correo": "maria@gasca.com"
+      },
+      {
+        "_id": "cat02",
+        "nombreEmpresa": "Gastrolunch S.L.",
+        "personaContacto": "Javier López",
+        "telefono": "600654321",
+        "correo": "javier@gastrolunch.com"
+      },
+      {
+        "_id": "cat03",
+        "nombreEmpresa": "Catering Iruña",
+        "personaContacto": "Ane Garmendia",
+        "telefono": "600789123",
+        "correo": "ane@iruña.com"
+      }
+    ],
+    "tipos_dieta": [
+      {
+        "_id": "diet1",
+        "codigo": "BASAL",
+        "nombre": "Dieta Basal",
+        "descripcion": "Dieta normal y equilibrada",
+        "estandar": "",
+        "creadoEn": {
+          "$date": "2025-05-07T11:00:00Z"
+        }
+      },
+      {
+        "_id": "diet2",
+        "codigo": "FACIL_MASTICACION",
+        "nombre": "Fácil masticación / triturada / líquida",
+        "descripcion": "Para dificultades de masticación o deglución (IDDSI nivel 4)",
+        "estandar": "IDDSI nivel 4",
+        "creadoEn": {
+          "$date": "2025-05-07T11:00:00Z"
+        }
+      },
+      {
+        "_id": "diet3",
+        "codigo": "DIABETICA",
+        "nombre": "Dieta para diabéticos",
+        "descripcion": "Control de carbohidratos y azúcares",
+        "estandar": "",
+        "creadoEn": {
+          "$date": "2025-05-07T11:00:00Z"
+        }
+      },
+      {
+        "_id": "diet4",
+        "codigo": "HIPOSODICA",
+        "nombre": "Hiposódica (sin sal)",
+        "descripcion": "Baja en sodio, recomendada para hipertensión",
+        "estandar": "",
+        "creadoEn": {
+          "$date": "2025-05-07T11:00:00Z"
+        }
+      },
+      {
+        "_id": "diet5",
+        "codigo": "TEXTURA_MODIFICADA",
+        "nombre": "Textura modificada / Disfagia",
+        "descripcion": "Para residentes con problemas para tragar o masticar (triturado, semisólido, puré o líquidos espesados)",
+        "estandar": "IDDSI niveles 3–4",
+        "creadoEn": {
+          "$date": "2025-05-07T11:00:00Z"
+        }
+      }
+    ],
+    "asignaciones": [
+      {
+        "_id": "asign01",
+        "residenteId": "res1",
+        "plantillaMenuId": "tmpl1A",
+        "fecha": "2025-05-12T08:00:00.000Z",
+        "tipoComida": 1,
+        "platoIds": [
+          "dish1"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-12T08:05:00.000Z"
+      },
+      {
+        "_id": "asign02",
+        "residenteId": "res1",
+        "plantillaMenuId": "tmpl1A",
+        "fecha": "2025-05-12T13:00:00.000Z",
+        "tipoComida": 2,
+        "platoIds": [
+          "dish8"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-12T13:05:00.000Z"
+      },
+      {
+        "_id": "asign03",
+        "residenteId": "res1",
+        "plantillaMenuId": "tmpl1A",
+        "fecha": "2025-05-12T19:00:00.000Z",
+        "tipoComida": 3,
+        "platoIds": [
+          "dish15"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-12T19:05:00.000Z"
+      },
+      {
+        "_id": "asign04",
+        "residenteId": "res2",
+        "plantillaMenuId": "tmpl4A",
+        "fecha": "2025-05-12T08:00:00.000Z",
+        "tipoComida": 1,
+        "platoIds": [
+          "dish1"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-12T08:05:00.000Z"
+      },
+      {
+        "_id": "asign05",
+        "residenteId": "res2",
+        "plantillaMenuId": "tmpl4A",
+        "fecha": "2025-05-12T13:00:00.000Z",
+        "tipoComida": 2,
+        "platoIds": [
+          "dish8"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-12T13:05:00.000Z"
+      },
+      {
+        "_id": "asign06",
+        "residenteId": "res2",
+        "plantillaMenuId": "tmpl4A",
+        "fecha": "2025-05-12T19:00:00.000Z",
+        "tipoComida": 3,
+        "platoIds": [
+          "dish15"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-12T19:05:00.000Z"
+      },
+      {
+        "_id": "asign07",
+        "residenteId": "res3",
+        "plantillaMenuId": "tmpl2A",
+        "fecha": "2025-05-12T08:00:00.000Z",
+        "tipoComida": 1,
+        "platoIds": [
+          "dish1"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-12T08:05:00.000Z"
+      },
+      {
+        "_id": "asign08",
+        "residenteId": "res3",
+        "plantillaMenuId": "tmpl2A",
+        "fecha": "2025-05-12T13:00:00.000Z",
+        "tipoComida": 2,
+        "platoIds": [
+          "dish8"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-12T13:05:00.000Z"
+      },
+      {
+        "_id": "asign09",
+        "residenteId": "res3",
+        "plantillaMenuId": "tmpl2A",
+        "fecha": "2025-05-12T19:00:00.000Z",
+        "tipoComida": 3,
+        "platoIds": [
+          "dish15"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-12T19:05:00.000Z"
+      },
+      {
+        "_id": "asign10",
+        "residenteId": "res4",
+        "plantillaMenuId": "tmpl1A",
+        "fecha": "2025-05-12T08:00:00.000Z",
+        "tipoComida": 1,
+        "platoIds": [
+          "dish1"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-12T08:05:00.000Z"
+      },
+      {
+        "_id": "asign11",
+        "residenteId": "res4",
+        "plantillaMenuId": "tmpl1A",
+        "fecha": "2025-05-12T13:00:00.000Z",
+        "tipoComida": 2,
+        "platoIds": [
+          "dish8"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-12T13:05:00.000Z"
+      },
+      {
+        "_id": "asign12",
+        "residenteId": "res4",
+        "plantillaMenuId": "tmpl1A",
+        "fecha": "2025-05-12T19:00:00.000Z",
+        "tipoComida": 3,
+        "platoIds": [
+          "dish15"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-12T19:05:00.000Z"
+      },
+      {
+        "_id": "asign13",
+        "residenteId": "res5",
+        "plantillaMenuId": "tmpl3A",
+        "fecha": "2025-05-12T08:00:00.000Z",
+        "tipoComida": 1,
+        "platoIds": [
+          "dish1"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-12T08:05:00.000Z"
+      },
+      {
+        "_id": "asign14",
+        "residenteId": "res5",
+        "plantillaMenuId": "tmpl3A",
+        "fecha": "2025-05-12T13:00:00.000Z",
+        "tipoComida": 2,
+        "platoIds": [
+          "dish8"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-12T13:05:00.000Z"
+      },
+      {
+        "_id": "asign15",
+        "residenteId": "res5",
+        "plantillaMenuId": "tmpl3A",
+        "fecha": "2025-05-12T19:00:00.000Z",
+        "tipoComida": 3,
+        "platoIds": [
+          "dish15"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-12T19:05:00.000Z"
+      },
+      {
+        "_id": "asign16",
+        "residenteId": "res6",
+        "plantillaMenuId": "tmpl5A",
+        "fecha": "2025-05-12T08:00:00.000Z",
+        "tipoComida": 1,
+        "platoIds": [
+          "dish1"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-12T08:05:00.000Z"
+      },
+      {
+        "_id": "asign17",
+        "residenteId": "res6",
+        "plantillaMenuId": "tmpl5A",
+        "fecha": "2025-05-12T13:00:00.000Z",
+        "tipoComida": 2,
+        "platoIds": [
+          "dish8"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-12T13:05:00.000Z"
+      },
+      {
+        "_id": "asign18",
+        "residenteId": "res6",
+        "plantillaMenuId": "tmpl5A",
+        "fecha": "2025-05-12T19:00:00.000Z",
+        "tipoComida": 3,
+        "platoIds": [
+          "dish15"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-12T19:05:00.000Z"
+      },
+      {
+        "_id": "asign19",
+        "residenteId": "res1",
+        "plantillaMenuId": "tmpl1A",
+        "fecha": "2025-05-13T08:00:00.000Z",
+        "tipoComida": 1,
+        "platoIds": [
+          "dish1"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-13T08:00:00.000Z"
+      },
+      {
+        "_id": "asign20",
+        "residenteId": "res1",
+        "plantillaMenuId": "tmpl1A",
+        "fecha": "2025-05-13T08:00:00.000Z",
+        "tipoComida": 2,
+        "platoIds": [
+          "dish8"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-13T08:00:00.000Z"
+      },
+      {
+        "_id": "asign21",
+        "residenteId": "res1",
+        "plantillaMenuId": "tmpl1A",
+        "fecha": "2025-05-13T08:00:00.000Z",
+        "tipoComida": 3,
+        "platoIds": [
+          "dish15"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-13T08:00:00.000Z"
+      },
+      {
+        "_id": "asign22",
+        "residenteId": "res2",
+        "plantillaMenuId": "tmpl2A",
+        "fecha": "2025-05-13T08:00:00.000Z",
+        "tipoComida": 1,
+        "platoIds": [
+          "dish1"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-13T08:00:00.000Z"
+      },
+      {
+        "_id": "asign23",
+        "residenteId": "res2",
+        "plantillaMenuId": "tmpl2A",
+        "fecha": "2025-05-13T08:00:00.000Z",
+        "tipoComida": 2,
+        "platoIds": [
+          "dish8"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-13T08:00:00.000Z"
+      },
+      {
+        "_id": "asign24",
+        "residenteId": "res2",
+        "plantillaMenuId": "tmpl2A",
+        "fecha": "2025-05-13T08:00:00.000Z",
+        "tipoComida": 3,
+        "platoIds": [
+          "dish15"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-13T08:00:00.000Z"
+      },
+      {
+        "_id": "asign25",
+        "residenteId": "res3",
+        "plantillaMenuId": "tmpl3A",
+        "fecha": "2025-05-13T08:00:00.000Z",
+        "tipoComida": 1,
+        "platoIds": [
+          "dish1"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-13T08:00:00.000Z"
+      },
+      {
+        "_id": "asign26",
+        "residenteId": "res3",
+        "plantillaMenuId": "tmpl3A",
+        "fecha": "2025-05-13T08:00:00.000Z",
+        "tipoComida": 2,
+        "platoIds": [
+          "dish8"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-13T08:00:00.000Z"
+      },
+      {
+        "_id": "asign27",
+        "residenteId": "res3",
+        "plantillaMenuId": "tmpl3A",
+        "fecha": "2025-05-13T08:00:00.000Z",
+        "tipoComida": 3,
+        "platoIds": [
+          "dish15"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-13T08:00:00.000Z"
+      },
+      {
+        "_id": "asign28",
+        "residenteId": "res4",
+        "plantillaMenuId": "tmpl4A",
+        "fecha": "2025-05-13T08:00:00.000Z",
+        "tipoComida": 1,
+        "platoIds": [
+          "dish1"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-13T08:00:00.000Z"
+      },
+      {
+        "_id": "asign29",
+        "residenteId": "res4",
+        "plantillaMenuId": "tmpl4A",
+        "fecha": "2025-05-13T08:00:00.000Z",
+        "tipoComida": 2,
+        "platoIds": [
+          "dish8"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-13T08:00:00.000Z"
+      },
+      {
+        "_id": "asign30",
+        "residenteId": "res4",
+        "plantillaMenuId": "tmpl4A",
+        "fecha": "2025-05-13T08:00:00.000Z",
+        "tipoComida": 3,
+        "platoIds": [
+          "dish15"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-13T08:00:00.000Z"
+      },
+      {
+        "_id": "asign31",
+        "residenteId": "res5",
+        "plantillaMenuId": "tmpl5A",
+        "fecha": "2025-05-13T08:00:00.000Z",
+        "tipoComida": 1,
+        "platoIds": [
+          "dish1"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-13T08:00:00.000Z"
+      },
+      {
+        "_id": "asign32",
+        "residenteId": "res5",
+        "plantillaMenuId": "tmpl5A",
+        "fecha": "2025-05-13T08:00:00.000Z",
+        "tipoComida": 2,
+        "platoIds": [
+          "dish8"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-13T08:00:00.000Z"
+      },
+      {
+        "_id": "asign33",
+        "residenteId": "res5",
+        "plantillaMenuId": "tmpl5A",
+        "fecha": "2025-05-13T08:00:00.000Z",
+        "tipoComida": 3,
+        "platoIds": [
+          "dish15"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": "2025-05-13T08:00:00.000Z"
+      }
+    ],
+    "platos": [
+      {
+        "_id": "dish1",
+        "nombre": "Gachas de avena con fruta",
+        "descripcion": "Avena cocida en leche con fruta variada",
+        "ingredientes": [
+          "avena",
+          "leche",
+          "azúcar",
+          "fruta variada"
+        ],
+        "alergenos": [
+          "alerg19",
+          "alerg20"
+        ],
+        "tipoDietaIds": [
+          "diet1",
+          "diet2",
+          "diet3",
+          "diet5"
+        ],
+        "tipoComida": 1,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-07T12:00:00.000Z",
+        "actualizadoEn": "2025-05-07T12:00:00.000Z"
+      },
+      {
+        "_id": "dish2",
+        "nombre": "Tortilla francesa",
+        "descripcion": "Huevos batidos con un toque de aceite",
+        "ingredientes": [
+          "huevo",
+          "aceite",
+          "sal"
+        ],
+        "alergenos": [
+          "alerg21"
+        ],
+        "tipoDietaIds": [
+          "diet1",
+          "diet2",
+          "diet5"
+        ],
+        "tipoComida": 1,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-07T12:00:00.000Z",
+        "actualizadoEn": "2025-05-07T12:00:00.000Z"
+      },
+      {
+        "_id": "dish3",
+        "nombre": "Yogur con miel",
+        "descripcion": "Yogur natural endulzado con miel",
+        "ingredientes": [
+          "yogur",
+          "miel"
+        ],
+        "alergenos": [
+          "alerg20"
+        ],
+        "tipoDietaIds": [
+          "diet1",
+          "diet5"
+        ],
+        "tipoComida": 1,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-07T12:00:00.000Z",
+        "actualizadoEn": "2025-05-07T12:00:00.000Z"
+      },
+      {
+        "_id": "dish4",
+        "nombre": "Puré de manzana",
+        "descripcion": "Manzana cocida y triturada",
+        "ingredientes": [
+          "manzana",
+          "agua"
+        ],
+        "alergenos": [],
+        "tipoDietaIds": [
+          "diet1",
+          "diet2",
+          "diet3",
+          "diet5"
+        ],
+        "tipoComida": 1,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-07T12:00:00.000Z",
+        "actualizadoEn": "2025-05-07T12:00:00.000Z"
+      },
+      {
+        "_id": "dish5",
+        "nombre": "Pan tostado con aceite",
+        "descripcion": "Rebanada de pan integral con un chorrito de aceite de oliva",
+        "ingredientes": [
+          "pan",
+          "aceite de oliva"
+        ],
+        "alergenos": [
+          "alerg19"
+        ],
+        "tipoDietaIds": [
+          "diet1"
+        ],
+        "tipoComida": 1,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-07T12:00:00.000Z",
+        "actualizadoEn": "2025-05-07T12:00:00.000Z"
+      },
+      {
+        "_id": "dish6",
+        "nombre": "Compota de pera",
+        "descripcion": "Peras cocidas y trituradas",
+        "ingredientes": [
+          "pera",
+          "agua"
+        ],
+        "alergenos": [],
+        "tipoDietaIds": [
+          "diet1",
+          "diet2",
+          "diet3",
+          "diet5"
+        ],
+        "tipoComida": 1,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-07T12:00:00.000Z",
+        "actualizadoEn": "2025-05-07T12:00:00.000Z"
+      },
+      {
+        "_id": "dish7",
+        "nombre": "Pudín de frutas mixtas",
+        "descripcion": "Gelatina suave con trozos de frutas variadas",
+        "ingredientes": [
+          "gelatina",
+          "fruta variada"
+        ],
+        "alergenos": [],
+        "tipoDietaIds": [
+          "diet1",
+          "diet2",
+          "diet5"
+        ],
+        "tipoComida": 1,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-07T12:00:00.000Z",
+        "actualizadoEn": "2025-05-07T12:00:00.000Z"
+      },
+      {
+        "_id": "dish8",
+        "nombre": "Crema de calabacín",
+        "descripcion": "Calabacín y patata cocidos y triturados",
+        "ingredientes": [
+          "calabacín",
+          "patata",
+          "agua",
+          "aceite"
+        ],
+        "alergenos": [],
+        "tipoDietaIds": [
+          "diet1",
+          "diet2",
+          "diet3",
+          "diet5"
+        ],
+        "tipoComida": 2,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-07T12:00:00.000Z",
+        "actualizadoEn": "2025-05-07T12:00:00.000Z"
+      },
+      {
+        "_id": "dish9",
+        "nombre": "Pescado al vapor",
+        "descripcion": "Pescado blanco al vapor, sin sal añadida",
+        "ingredientes": [
+          "pescado blanco",
+          "agua"
+        ],
+        "alergenos": [
+          "alerg22"
+        ],
+        "tipoDietaIds": [
+          "diet1",
+          "diet3",
+          "diet4"
+        ],
+        "tipoComida": 2,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-07T12:00:00.000Z",
+        "actualizadoEn": "2025-05-07T12:00:00.000Z"
+      },
+      {
+        "_id": "dish10",
+        "nombre": "Pollo guisado con patatas",
+        "descripcion": "Pollo tierno con patatas cocidas en caldo suave",
+        "ingredientes": [
+          "pollo",
+          "patata",
+          "agua",
+          "aceite"
+        ],
+        "alergenos": [],
+        "tipoDietaIds": [
+          "diet1",
+          "diet3"
+        ],
+        "tipoComida": 2,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-07T12:00:00.000Z",
+        "actualizadoEn": "2025-05-07T12:00:00.000Z"
+      },
+      {
+        "_id": "dish11",
+        "nombre": "Arroz caldoso con verduras",
+        "descripcion": "Arroz suave con caldoso y verduras finamente picadas",
+        "ingredientes": [
+          "arroz",
+          "zanahoria",
+          "calabacín",
+          "agua"
+        ],
+        "alergenos": [],
+        "tipoDietaIds": [
+          "diet1",
+          "diet3",
+          "diet5"
+        ],
+        "tipoComida": 2,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-07T12:00:00.000Z",
+        "actualizadoEn": "2025-05-07T12:00:00.000Z"
+      },
+      {
+        "_id": "dish12",
+        "nombre": "Lentejas estofadas",
+        "descripcion": "Lentejas cocidas con verduras y especias suaves",
+        "ingredientes": [
+          "lentejas",
+          "verduras",
+          "aceite"
+        ],
+        "alergenos": [],
+        "tipoDietaIds": [
+          "diet1"
+        ],
+        "tipoComida": 2,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-07T12:00:00.000Z",
+        "actualizadoEn": "2025-05-07T12:00:00.000Z"
+      },
+      {
+        "_id": "dish13",
+        "nombre": "Filete de ternera a la plancha",
+        "descripcion": "Ternera magra a la plancha sin sal añadida",
+        "ingredientes": [
+          "ternera",
+          "aceite"
+        ],
+        "alergenos": [],
+        "tipoDietaIds": [
+          "diet1",
+          "diet3"
+        ],
+        "tipoComida": 2,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-07T12:00:00.000Z",
+        "actualizadoEn": "2025-05-07T12:00:00.000Z"
+      },
+      {
+        "_id": "dish14",
+        "nombre": "Puré de zanahoria y patata",
+        "descripcion": "Zanahoria y patata cocidas y trituradas",
+        "ingredientes": [
+          "zanahoria",
+          "patata",
+          "agua"
+        ],
+        "alergenos": [],
+        "tipoDietaIds": [
+          "diet1",
+          "diet2",
+          "diet3",
+          "diet5"
+        ],
+        "tipoComida": 2,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-07T12:00:00.000Z",
+        "actualizadoEn": "2025-05-07T12:00:00.000Z"
+      },
+      {
+        "_id": "dish15",
+        "nombre": "Sopa de fideos",
+        "descripcion": "Fideos finos en caldo bajo en sal",
+        "ingredientes": [
+          "fideos",
+          "caldo bajo sal"
+        ],
+        "alergenos": [
+          "alerg19"
+        ],
+        "tipoDietaIds": [
+          "diet1",
+          "diet5"
+        ],
+        "tipoComida": 3,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-07T12:00:00.000Z",
+        "actualizadoEn": "2025-05-07T12:00:00.000Z"
+      },
+      {
+        "_id": "dish16",
+        "nombre": "Ensalada de pollo desmenuzado",
+        "descripcion": "Pollo tierno sobre lechuga y tomate picado",
+        "ingredientes": [
+          "pollo",
+          "lechuga",
+          "tomate",
+          "aceite"
+        ],
+        "alergenos": [],
+        "tipoDietaIds": [
+          "diet1"
+        ],
+        "tipoComida": 3,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-07T12:00:00.000Z",
+        "actualizadoEn": "2025-05-07T12:00:00.000Z"
+      },
+      {
+        "_id": "dish17",
+        "nombre": "Merluza en salsa de limón",
+        "descripcion": "Merluza al horno con un toque de limón",
+        "ingredientes": [
+          "merluza",
+          "limón",
+          "aceite"
+        ],
+        "alergenos": [
+          "alerg22"
+        ],
+        "tipoDietaIds": [
+          "diet1",
+          "diet3",
+          "diet4"
+        ],
+        "tipoComida": 3,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-07T12:00:00.000Z",
+        "actualizadoEn": "2025-05-07T12:00:00.000Z"
+      },
+      {
+        "_id": "dish18",
+        "nombre": "Albóndigas de pavo",
+        "descripcion": "Albóndigas suaves de pavo en salsa ligera",
+        "ingredientes": [
+          "pavo",
+          "huevo",
+          "pan rallado",
+          "especias"
+        ],
+        "alergenos": [
+          "alerg21",
+          "alerg19"
+        ],
+        "tipoDietaIds": [
+          "diet1"
+        ],
+        "tipoComida": 3,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-07T12:00:00.000Z",
+        "actualizadoEn": "2025-05-07T12:00:00.000Z"
+      },
+      {
+        "_id": "dish19",
+        "nombre": "Verduras al papillote",
+        "descripcion": "Berenjena, calabacín y pimiento al horno en papillote",
+        "ingredientes": [
+          "berenjena",
+          "calabacín",
+          "pimiento",
+          "aceite"
+        ],
+        "alergenos": [],
+        "tipoDietaIds": [
+          "diet1",
+          "diet4",
+          "diet5"
+        ],
+        "tipoComida": 3,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-07T12:00:00.000Z",
+        "actualizadoEn": "2025-05-07T12:00:00.000Z"
+      },
+      {
+        "_id": "dish20",
+        "nombre": "Tortilla de patata triturada",
+        "descripcion": "Patata y huevo batido, cocidos y triturados",
+        "ingredientes": [
+          "patata",
+          "huevo",
+          "aceite"
+        ],
+        "alergenos": [
+          "alerg21"
+        ],
+        "tipoDietaIds": [
+          "diet1",
+          "diet2",
+          "diet5"
+        ],
+        "tipoComida": 3,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-07T12:00:00.000Z",
+        "actualizadoEn": "2025-05-07T12:00:00.000Z"
+      },
+      {
+        "_id": "dish21",
+        "nombre": "Crema de champiñones",
+        "descripcion": "Champiñones y patata en crema suave",
+        "ingredientes": [
+          "champiñones",
+          "patata",
+          "crema de leche"
+        ],
+        "alergenos": [
+          "alerg20"
+        ],
+        "tipoDietaIds": [
+          "diet1",
+          "diet2",
+          "diet5"
+        ],
+        "tipoComida": 3,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-07T12:00:00.000Z",
+        "actualizadoEn": "2025-05-07T12:00:00.000Z"
+      },
+      {
+        "_id": "dish22",
+        "nombre": "Tostadas integrales con aguacate y huevo",
+        "descripcion": "Rebanadas de pan integral con aguacate machacado y huevo pochado",
+        "ingredientes": [
+          "pan integral",
+          "aguacate",
+          "huevo",
+          "sal",
+          "pimienta"
+        ],
+        "alergenos": [
+          "alerg19",
+          "alerg21"
+        ],
+        "tipoDietaIds": [
+          "diet1",
+          "diet2",
+          "diet5"
+        ],
+        "tipoComida": 1,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-12T12:00:00.000Z",
+        "actualizadoEn": "2025-05-12T12:00:00.000Z"
+      },
+      {
+        "_id": "dish23",
+        "nombre": "Smoothie de frutas y espinacas",
+        "descripcion": "Batido de plátano, fresas, espinacas y leche de almendras",
+        "ingredientes": [
+          "plátano",
+          "fresas",
+          "espinacas",
+          "leche de almendras"
+        ],
+        "alergenos": [
+          "alerg19"
+        ],
+        "tipoDietaIds": [
+          "diet1",
+          "diet3",
+          "diet5"
+        ],
+        "tipoComida": 1,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-12T12:00:00.000Z",
+        "actualizadoEn": "2025-05-12T12:00:00.000Z"
+      },
+      {
+        "_id": "dish24",
+        "nombre": "Porridge de avena con manzana y canela",
+        "descripcion": "Avena cocida en leche con trozos de manzana y un toque de canela",
+        "ingredientes": [
+          "avena",
+          "leche",
+          "manzana",
+          "canela"
+        ],
+        "alergenos": [
+          "alerg19",
+          "alerg20"
+        ],
+        "tipoDietaIds": [
+          "diet1",
+          "diet2",
+          "diet5"
+        ],
+        "tipoComida": 1,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-12T12:00:00.000Z",
+        "actualizadoEn": "2025-05-12T12:00:00.000Z"
+      },
+      {
+        "_id": "dish25",
+        "nombre": "Yogur natural con granola y frutos rojos",
+        "descripcion": "Yogur natural acompañado de granola casera y mezcla de frutos rojos",
+        "ingredientes": [
+          "yogur natural",
+          "granola",
+          "frutos rojos"
+        ],
+        "alergenos": [
+          "alerg20",
+          "alerg19",
+          "alerg19"
+        ],
+        "tipoDietaIds": [
+          "diet1",
+          "diet5"
+        ],
+        "tipoComida": 1,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-12T12:00:00.000Z",
+        "actualizadoEn": "2025-05-12T12:00:00.000Z"
+      },
+      {
+        "_id": "dish26",
+        "nombre": "Tortilla de espinacas y champiñones",
+        "descripcion": "Tortilla francesa con espinacas frescas y champiñones salteados",
+        "ingredientes": [
+          "huevo",
+          "espinacas",
+          "champiñones",
+          "aceite de oliva"
+        ],
+        "alergenos": [
+          "alerg21"
+        ],
+        "tipoDietaIds": [
+          "diet1",
+          "diet2",
+          "diet5"
+        ],
+        "tipoComida": 1,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-12T12:00:00.000Z",
+        "actualizadoEn": "2025-05-12T12:00:00.000Z"
+      },
+      {
+        "_id": "dish27",
+        "nombre": "Panqueques de avena y plátano",
+        "descripcion": "Panqueques elaborados con avena y plátano, sin azúcar añadida",
+        "ingredientes": [
+          "avena",
+          "plátano",
+          "huevo",
+          "leche"
+        ],
+        "alergenos": [
+          "alerg19",
+          "alerg21",
+          "alerg20"
+        ],
+        "tipoDietaIds": [
+          "diet1",
+          "diet2",
+          "diet5"
+        ],
+        "tipoComida": 1,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-12T12:00:00.000Z",
+        "actualizadoEn": "2025-05-12T12:00:00.000Z"
+      },
+      {
+        "_id": "dish28",
+        "nombre": "Ensalada de quinoa con verduras asadas",
+        "descripcion": "Quinoa cocida mezclada con calabacín, pimiento y berenjena asados",
+        "ingredientes": [
+          "quinoa",
+          "calabacín",
+          "pimiento",
+          "berenjena",
+          "aceite de oliva"
+        ],
+        "alergenos": [],
+        "tipoDietaIds": [
+          "diet1",
+          "diet3",
+          "diet5"
+        ],
+        "tipoComida": 2,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-12T12:00:00.000Z",
+        "actualizadoEn": "2025-05-12T12:00:00.000Z"
+      },
+      {
+        "_id": "dish29",
+        "nombre": "Pechuga de pollo a la plancha con brócoli al vapor",
+        "descripcion": "Pechuga de pollo a la plancha acompañada de brócoli al vapor",
+        "ingredientes": [
+          "pechuga de pollo",
+          "brócoli",
+          "aceite de oliva",
+          "sal"
+        ],
+        "alergenos": [],
+        "tipoDietaIds": [
+          "diet1",
+          "diet3",
+          "diet4"
+        ],
+        "tipoComida": 2,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-12T12:00:00.000Z",
+        "actualizadoEn": "2025-05-12T12:00:00.000Z"
+      },
+      {
+        "_id": "dish30",
+        "nombre": "Lentejas con verduras",
+        "descripcion": "Lentejas cocidas con zanahoria, puerro y apio",
+        "ingredientes": [
+          "lentejas",
+          "zanahoria",
+          "puerro",
+          "apio",
+          "aceite de oliva"
+        ],
+        "alergenos": [],
+        "tipoDietaIds": [
+          "diet1",
+          "diet3"
+        ],
+        "tipoComida": 2,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-12T12:00:00.000Z",
+        "actualizadoEn": "2025-05-12T12:00:00.000Z"
+      },
+      {
+        "_id": "dish31",
+        "nombre": "Salmón al horno con espárragos",
+        "descripcion": "Filete de salmón al horno acompañado de espárragos verdes",
+        "ingredientes": [
+          "salmón",
+          "espárragos",
+          "limón",
+          "aceite de oliva"
+        ],
+        "alergenos": [
+          "alerg22"
+        ],
+        "tipoDietaIds": [
+          "diet1",
+          "diet3",
+          "diet4"
+        ],
+        "tipoComida": 2,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-12T12:00:00.000Z",
+        "actualizadoEn": "2025-05-12T12:00:00.000Z"
+      },
+      {
+        "_id": "dish32",
+        "nombre": "Crema de zanahoria",
+        "descripcion": "Suave crema de zanahoria cocida con un toque de aceite de oliva",
+        "ingredientes": [
+          "zanahoria",
+          "patata",
+          "cebolla",
+          "agua",
+          "aceite de oliva"
+        ],
+        "alergenos": [],
+        "tipoDietaIds": [
+          "diet1",
+          "diet2",
+          "diet3",
+          "diet5"
+        ],
+        "tipoComida": 2,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-12T14:00:00.000Z",
+        "actualizadoEn": "2025-05-12T14:00:00.000Z"
+      },
+      {
+        "_id": "dish33",
+        "nombre": "Ensalada de lentejas",
+        "descripcion": "Lentejas cocidas con tomate, cebolla y huevo duro",
+        "ingredientes": [
+          "lentejas",
+          "tomate",
+          "cebolla",
+          "huevo",
+          "aceite de oliva"
+        ],
+        "alergenos": [
+          "alerg21"
+        ],
+        "tipoDietaIds": [
+          "diet1",
+          "diet3"
+        ],
+        "tipoComida": 2,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-12T14:00:00.000Z",
+        "actualizadoEn": "2025-05-12T14:00:00.000Z"
+      },
+      {
+        "_id": "dish34",
+        "nombre": "Puré de calabaza",
+        "descripcion": "Puré de calabaza y patata, ideal para dietas blandas",
+        "ingredientes": [
+          "calabaza",
+          "patata",
+          "agua",
+          "aceite de oliva"
+        ],
+        "alergenos": [],
+        "tipoDietaIds": [
+          "diet1",
+          "diet2",
+          "diet5"
+        ],
+        "tipoComida": 2,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-12T14:00:00.000Z",
+        "actualizadoEn": "2025-05-12T14:00:00.000Z"
+      },
+      {
+        "_id": "dish35",
+        "nombre": "Arroz con pollo y verduras",
+        "descripcion": "Arroz cocido con pollo en trozos pequeños y verduras variadas",
+        "ingredientes": [
+          "arroz",
+          "pollo",
+          "zanahoria",
+          "guisantes",
+          "aceite de oliva"
+        ],
+        "alergenos": [],
+        "tipoDietaIds": [
+          "diet1",
+          "diet3"
+        ],
+        "tipoComida": 2,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-12T14:00:00.000Z",
+        "actualizadoEn": "2025-05-12T14:00:00.000Z"
+      },
+      {
+        "_id": "dish36",
+        "nombre": "Galletas de avena caseras",
+        "descripcion": "Galletas blandas de avena con plátano, sin azúcar añadida",
+        "ingredientes": [
+          "avena",
+          "plátano",
+          "canela"
+        ],
+        "alergenos": [
+          "alerg19"
+        ],
+        "tipoDietaIds": [
+          "diet1",
+          "diet2",
+          "diet5"
+        ],
+        "tipoComida": 1,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-12T14:00:00.000Z",
+        "actualizadoEn": "2025-05-12T14:00:00.000Z"
+      },
+      {
+        "_id": "dish37",
+        "nombre": "Batido de melocotón y yogur",
+        "descripcion": "Melocotón natural licuado con yogur suave",
+        "ingredientes": [
+          "melocotón",
+          "yogur",
+          "agua"
+        ],
+        "alergenos": [
+          "alerg20"
+        ],
+        "tipoDietaIds": [
+          "diet1",
+          "diet3",
+          "diet5"
+        ],
+        "tipoComida": 1,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-12T14:00:00.000Z",
+        "actualizadoEn": "2025-05-12T14:00:00.000Z"
+      },
+      {
+        "_id": "dish38",
+        "nombre": "Sopa de verduras troceadas",
+        "descripcion": "Sopa ligera con trozos pequeños de zanahoria, puerro y patata",
+        "ingredientes": [
+          "zanahoria",
+          "puerro",
+          "patata",
+          "agua",
+          "sal"
+        ],
+        "alergenos": [],
+        "tipoDietaIds": [
+          "diet1",
+          "diet2",
+          "diet4",
+          "diet5"
+        ],
+        "tipoComida": 3,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-12T14:00:00.000Z",
+        "actualizadoEn": "2025-05-12T14:00:00.000Z"
+      },
+      {
+        "_id": "dish39",
+        "nombre": "Tostadas con queso fresco y tomate",
+        "descripcion": "Pan integral tostado con queso fresco y rodajas de tomate",
+        "ingredientes": [
+          "pan integral",
+          "queso fresco",
+          "tomate"
+        ],
+        "alergenos": [
+          "alerg19",
+          "alerg20"
+        ],
+        "tipoDietaIds": [
+          "diet1"
+        ],
+        "tipoComida": 1,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-12T14:00:00.000Z",
+        "actualizadoEn": "2025-05-12T14:00:00.000Z"
+      },
+      {
+        "_id": "dish40",
+        "nombre": "Macarrones con salsa de calabacín",
+        "descripcion": "Macarrones integrales con salsa de calabacín y queso",
+        "ingredientes": [
+          "macarrones integrales",
+          "calabacín",
+          "queso rallado"
+        ],
+        "alergenos": [
+          "alerg19",
+          "alerg20"
+        ],
+        "tipoDietaIds": [
+          "diet1",
+          "diet2"
+        ],
+        "tipoComida": 2,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-12T14:00:00.000Z",
+        "actualizadoEn": "2025-05-12T14:00:00.000Z"
+      },
+      {
+        "_id": "dish41",
+        "nombre": "Puré de merluza y patata",
+        "descripcion": "Merluza cocida y triturada junto a patata para facilitar su ingesta",
+        "ingredientes": [
+          "merluza",
+          "patata",
+          "agua",
+          "aceite de oliva"
+        ],
+        "alergenos": [
+          "alerg22"
+        ],
+        "tipoDietaIds": [
+          "diet1",
+          "diet2",
+          "diet5"
+        ],
+        "tipoComida": 3,
+        "creadoPor": "u2",
+        "creadoEn": "2025-05-12T14:00:00.000Z",
+        "actualizadoEn": "2025-05-12T14:00:00.000Z"
+      }
+    ],
+    "residentes": [
+      {
+        "_id": "res1",
+        "nombre": "Maria Jesus",
+        "apellidos": "Gonzalez",
+        "fechaNacimiento": "1932-12-17T00:00:00.000Z",
+        "sexo": "M",
+        "alergiasId": [
+          "alerg16"
+        ],
+        "tipoDietaIds": [
+          "diet1"
+        ],
+        "notasEspeciales": "No le gusta la carne de ternera",
+        "creadoEn": "2025-05-07T10:00:00.000Z",
+        "actualizadoEn": "2025-05-07T10:00:00.000Z"
+      },
+      {
+        "_id": "res2",
+        "nombre": "José",
+        "apellidos": "Rodríguez",
+        "fechaNacimiento": "1940-07-20T00:00:00.000Z",
+        "sexo": "H",
+        "alergiasId": [
+          "alerg7"
+        ],
+        "tipoDietaIds": [
+          "diet4"
+        ],
+        "notasEspeciales": "Requiere control de presión arterial",
+        "creadoEn": "2025-05-07T11:00:00.000Z",
+        "actualizadoEn": "2025-05-07T11:00:00.000Z"
+      },
+      {
+        "_id": "res3",
+        "nombre": "Isabel",
+        "apellidos": "Martínez",
+        "fechaNacimiento": "1938-11-15T00:00:00.000Z",
+        "sexo": "M",
+        "alergiasId": [
+          "alerg16"
+        ],
+        "tipoDietaIds": [
+          "diet2"
+        ],
+        "notasEspeciales": "Textura triturada media",
+        "creadoEn": "2025-05-07T11:00:00.000Z",
+        "actualizadoEn": "2025-05-07T11:00:00.000Z"
+      },
+      {
+        "_id": "res4",
+        "nombre": "Carmen",
+        "apellidos": "López",
+        "fechaNacimiento": "1932-02-05T00:00:00.000Z",
+        "sexo": "M",
+        "alergiasId": [],
+        "tipoDietaIds": [
+          "diet1"
+        ],
+        "notasEspeciales": "",
+        "creadoEn": "2025-05-07T11:00:00.000Z",
+        "actualizadoEn": "2025-05-07T11:00:00.000Z"
+      },
+      {
+        "_id": "res5",
+        "nombre": "Manuel",
+        "apellidos": "García",
+        "fechaNacimiento": "1936-09-10T00:00:00.000Z",
+        "sexo": "H",
+        "alergiasId": [
+          "alerg1"
+        ],
+        "tipoDietaIds": [
+          "diet3"
+        ],
+        "notasEspeciales": "Diabético con control estricto de azúcares",
+        "creadoEn": "2025-05-07T11:00:00.000Z",
+        "actualizadoEn": "2025-05-07T11:00:00.000Z"
+      },
+      {
+        "_id": "res6",
+        "nombre": "Dolores",
+        "apellidos": "Sánchez",
+        "fechaNacimiento": "1934-06-22T00:00:00.000Z",
+        "sexo": "M",
+        "alergiasId": [
+          "alerg7",
+          "alerg1"
+        ],
+        "tipoDietaIds": [
+          "diet2",
+          "diet4"
+        ],
+        "notasEspeciales": "Intercalar textura triturada y bajo sodio",
+        "creadoEn": "2025-05-07T11:00:00.000Z",
+        "actualizadoEn": "2025-05-07T11:00:00.000Z"
+      }
+    ],
+    "alergenos": [
+      {
+        "_id": "alerg1",
+        "nombre": "Gluten",
+        "descripcion": "Presente en trigo, cebada, centeno y sus derivados."
+      },
+      {
+        "_id": "alerg2",
+        "nombre": "Crustáceos",
+        "descripcion": "Camarones, langosta, cangrejo y similares."
+      },
+      {
+        "_id": "alerg3",
+        "nombre": "Huevo",
+        "descripcion": "Incluye huevo de gallina y alimentos que lo contienen."
+      },
+      {
+        "_id": "alerg4",
+        "nombre": "Pescado",
+        "descripcion": "Cualquier tipo de pescado: atún, salmón, merluza..."
+      },
+      {
+        "_id": "alerg5",
+        "nombre": "Cacahuetes",
+        "descripcion": "También conocido como maní, común en productos procesados."
+      },
+      {
+        "_id": "alerg6",
+        "nombre": "Soja",
+        "descripcion": "Presente en derivados como tofu, salsa de soja, etc."
+      },
+      {
+        "_id": "alerg7",
+        "nombre": "Lácteos",
+        "descripcion": "Leche y productos derivados como queso o yogur."
+      },
+      {
+        "_id": "alerg8",
+        "nombre": "Frutos de cáscara",
+        "descripcion": "Nueces, almendras, avellanas, anacardos, etc."
+      },
+      {
+        "_id": "alerg9",
+        "nombre": "Apio",
+        "descripcion": "Incluye raíces, tallos y sal de apio."
+      },
+      {
+        "_id": "alerg10",
+        "nombre": "Mostaza",
+        "descripcion": "Incluye semillas, salsas y derivados."
+      },
+      {
+        "_id": "alerg11",
+        "nombre": "Sésamo",
+        "descripcion": "Semillas, aceites y panes con sésamo."
+      },
+      {
+        "_id": "alerg12",
+        "nombre": "Sulfitos",
+        "descripcion": "Conservantes en frutas secas, vino, etc."
+      },
+      {
+        "_id": "alerg13",
+        "nombre": "Lupino",
+        "descripcion": "Legumbre usada en harinas y productos sin gluten."
+      },
+      {
+        "_id": "alerg14",
+        "nombre": "Moluscos",
+        "descripcion": "Mejillones, almejas, calamares, pulpos, etc."
+      },
+      {
+        "_id": "alerg15",
+        "nombre": "Sin alergia",
+        "descripcion": "El residente no presenta alergias alimentarias conocidas."
+      },
+      {
+        "_id": "alerg16",
+        "nombre": "Frutos secos",
+        "descripcion": "Alergia común a nueces, almendras, avellanas, etc."
+      },
+      {
+        "_id": "alerg17",
+        "nombre": "Mariscos",
+        "descripcion": "Alergia a crustáceos como camarones, cangrejo o langosta."
+      },
+      {
+        "_id": "alerg18",
+        "nombre": "Cacahuete",
+        "descripcion": "También conocido como maní, muy común en alimentos procesados."
+      },
+      {
+        "_id": "alerg19",
+        "nombre": "Alerg1",
+        "descripcion": "Alérgeno detectado en platos: alerg1"
+      },
+      {
+        "_id": "alerg20",
+        "nombre": "Alerg7",
+        "descripcion": "Alérgeno detectado en platos: alerg7"
+      },
+      {
+        "_id": "alerg21",
+        "nombre": "Alerg3",
+        "descripcion": "Alérgeno detectado en platos: alerg3"
+      },
+      {
+        "_id": "alerg22",
+        "nombre": "Alerg4",
+        "descripcion": "Alérgeno detectado en platos: alerg4"
+      }
+    ],
+    "plantilla_menu": [
+      {
+        "_id": "tmpl1A",
+        "codigo": "A",
+        "nombre": "Ciclo A – Dieta Basal",
+        "tipoDietaId": "diet1",
+        "semanaCiclo": 1,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl1B",
+        "codigo": "B",
+        "nombre": "Ciclo B – Dieta Basal",
+        "tipoDietaId": "diet1",
+        "semanaCiclo": 2,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl1C",
+        "codigo": "C",
+        "nombre": "Ciclo C – Dieta Basal",
+        "tipoDietaId": "diet1",
+        "semanaCiclo": 3,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl1D",
+        "codigo": "D",
+        "nombre": "Ciclo D – Dieta Basal",
+        "tipoDietaId": "diet1",
+        "semanaCiclo": 4,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl1E",
+        "codigo": "E",
+        "nombre": "Ciclo E – Dieta Basal",
+        "tipoDietaId": "diet1",
+        "semanaCiclo": 5,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl2A",
+        "codigo": "A",
+        "nombre": "Ciclo A – Fácil masticación / Disfagia",
+        "tipoDietaId": "diet2",
+        "semanaCiclo": 1,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl2B",
+        "codigo": "B",
+        "nombre": "Ciclo B – Fácil masticación / Disfagia",
+        "tipoDietaId": "diet2",
+        "semanaCiclo": 2,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl2C",
+        "codigo": "C",
+        "nombre": "Ciclo C – Fácil masticación / Disfagia",
+        "tipoDietaId": "diet2",
+        "semanaCiclo": 3,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl2D",
+        "codigo": "D",
+        "nombre": "Ciclo D – Fácil masticación / Disfagia",
+        "tipoDietaId": "diet2",
+        "semanaCiclo": 4,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl2E",
+        "codigo": "E",
+        "nombre": "Ciclo E – Fácil masticación / Disfagia",
+        "tipoDietaId": "diet2",
+        "semanaCiclo": 5,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl3A",
+        "codigo": "A",
+        "nombre": "Ciclo A – Dieta para diabéticos",
+        "tipoDietaId": "diet3",
+        "semanaCiclo": 1,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl3B",
+        "codigo": "B",
+        "nombre": "Ciclo B – Dieta para diabéticos",
+        "tipoDietaId": "diet3",
+        "semanaCiclo": 2,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl3C",
+        "codigo": "C",
+        "nombre": "Ciclo C – Dieta para diabéticos",
+        "tipoDietaId": "diet3",
+        "semanaCiclo": 3,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl3D",
+        "codigo": "D",
+        "nombre": "Ciclo D – Dieta para diabéticos",
+        "tipoDietaId": "diet3",
+        "semanaCiclo": 4,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl3E",
+        "codigo": "E",
+        "nombre": "Ciclo E – Dieta para diabéticos",
+        "tipoDietaId": "diet3",
+        "semanaCiclo": 5,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl4A",
+        "codigo": "A",
+        "nombre": "Ciclo A – Dieta Hiposódica",
+        "tipoDietaId": "diet4",
+        "semanaCiclo": 1,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl4B",
+        "codigo": "B",
+        "nombre": "Ciclo B – Dieta Hiposódica",
+        "tipoDietaId": "diet4",
+        "semanaCiclo": 2,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl4C",
+        "codigo": "C",
+        "nombre": "Ciclo C – Dieta Hiposódica",
+        "tipoDietaId": "diet4",
+        "semanaCiclo": 3,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl4D",
+        "codigo": "D",
+        "nombre": "Ciclo D – Dieta Hiposódica",
+        "tipoDietaId": "diet4",
+        "semanaCiclo": 4,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl4E",
+        "codigo": "E",
+        "nombre": "Ciclo E – Dieta Hiposódica",
+        "tipoDietaId": "diet4",
+        "semanaCiclo": 5,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl5A",
+        "codigo": "A",
+        "nombre": "Ciclo A – Textura modificada / Disfagia",
+        "tipoDietaId": "diet5",
+        "semanaCiclo": 1,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl5B",
+        "codigo": "B",
+        "nombre": "Ciclo B – Textura modificada / Disfagia",
+        "tipoDietaId": "diet5",
+        "semanaCiclo": 2,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl5C",
+        "codigo": "C",
+        "nombre": "Ciclo C – Textura modificada / Disfagia",
+        "tipoDietaId": "diet5",
+        "semanaCiclo": 3,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl5D",
+        "codigo": "D",
+        "nombre": "Ciclo D – Textura modificada / Disfagia",
+        "tipoDietaId": "diet5",
+        "semanaCiclo": 4,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl5E",
+        "codigo": "E",
+        "nombre": "Ciclo E – Textura modificada / Disfagia",
+        "tipoDietaId": "diet5",
+        "semanaCiclo": 5,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      }
+    ],
+    "registro_incidencias": [
+      {
+        "_id": "inc1",
+        "tipoIncidencia": "plato_no_servido",
+        "entidadId": "asign03",
+        "descripcion": "El residente no recibió la crema de calabacín en la comida",
+        "reportadoPor": "u3",
+        "fechaHora": {
+          "$date": "2025-05-12T13:10:00Z"
+        },
+        "detalles": {
+          "residenteId": "res1",
+          "tipoComida": "comida",
+          "platoEsperado": [
+            "dish8"
+          ]
+        }
+      },
+      {
+        "_id": "inc2",
+        "tipoIncidencia": "plato_equivocado",
+        "entidadId": "asign07",
+        "descripcion": "Se sirvió puré de zanahoria en lugar de puré de verduras",
+        "reportadoPor": "u3",
+        "fechaHora": {
+          "$date": "2025-05-12T19:07:00Z"
+        },
+        "detalles": {
+          "residenteId": "res2",
+          "tipoComida": "cena",
+          "platoEntregado": [
+            "dish14"
+          ],
+          "platoCorrecto": [
+            "dish15"
+          ]
+        }
+      },
+      {
+        "_id": "inc3",
+        "tipoIncidencia": "retraso_entrega",
+        "entidadId": "asign10",
+        "descripcion": "La cena llegó 30 minutos tarde",
+        "reportadoPor": "u3",
+        "fechaHora": {
+          "$date": "2025-05-12T19:30:00Z"
+        },
+        "detalles": {
+          "residenteId": "res3",
+          "tipoComida": "cena",
+          "horaProgramada": {
+            "$date": "2025-05-12T19:00:00Z"
+          },
+          "horaReal": {
+            "$date": "2025-05-12T19:30:00Z"
+          }
+        }
+      },
+      {
+        "_id": "inc4",
+        "tipoIncidencia": "alergeno_detectado",
+        "entidadId": "asign14",
+        "descripcion": "El plato de arroz caldoso contenía trazas de frutos secos",
+        "reportadoPor": "u2",
+        "fechaHora": {
+          "$date": "2025-05-12T13:15:00Z"
+        },
+        "detalles": {
+          "residenteId": "res5",
+          "tipoComida": "comida",
+          "platoIds": [
+            "dish11"
+          ],
+          "alergenoDetectado": "alerg16"
+        }
+      },
+      {
+        "_id": "inc5",
+        "tipoIncidencia": "plato_demasiado_caliente",
+        "entidadId": "asign19",
+        "descripcion": "La comida estaba demasiado caliente y no se pudo consumir a tiempo",
+        "reportadoPor": "u3",
+        "fechaHora": {
+          "$date": "2025-05-12T13:20:00Z"
+        },
+        "detalles": {
+          "residenteId": "res6",
+          "tipoComida": "comida",
+          "platoIds": [
+            "dish8"
+          ]
+        }
+      }
+    ],
+    "tipo_comida": [
+      {
+        "_id": 1,
+        "nombre": "Desayuno"
+      },
+      {
+        "_id": 2,
+        "nombre": "Comida"
+      },
+      {
+        "_id": 3,
+        "nombre": "Cena"
+      }
+    ],
+    "usuarios": [
+      {
+        "_id": "u1",
+        "nombre": "Carla Siles",
+        "correo": "carla.siles@residencia.org",
+        "contrasena": "latina",
+        "rolId": "rol1",
+        "creadoEn": "2025-05-07T09:00:00.000Z",
+        "actualizadoEn": "2025-05-07T09:00:00.000Z"
+      },
+      {
+        "_id": "u2",
+        "nombre": "Silvia Rodriguez",
+        "correo": "silvia.rodriguez@residencia.org",
+        "contrasena": "cosita",
+        "rolId": "rol2",
+        "creadoEn": "2025-05-07T09:10:00.000Z",
+        "actualizadoEn": "2025-05-07T09:10:00.000Z"
+      },
+      {
+        "_id": "u3",
+        "nombre": "Orlando",
+        "correo": "orlandito.colombiano@residencia.org",
+        "contrasena": "arepas",
+        "rolId": "rol4",
+        "creadoEn": "2025-05-07T09:10:00.000Z",
+        "actualizadoEn": "2025-05-07T09:10:00.000Z"
+      }
+    ]
+  }
+}
