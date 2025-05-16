@@ -1,0 +1,568 @@
+Para recrear desde cero la BD residencia_menus y poblarla con todos sus documentos, puedes usar un único script de mongosh.
+
+## Crear base de datos
+use prueba_residencia
+
+
+## Crear todas las colecciones en un mismo codigo - sin datos
+
+    const colecciones = ["roles", "tipo_comida", "tipos_dieta", "alergenos", "catering", "usuarios", "residentes", "platos", "plantilla_menu", "asignaciones", "registro_incidencias"]
+
+colecciones.forEach(nombre => {
+  db.createCollection(nombre)
+})
+
+
+
+## Crear cada colección de la base de datos
+
+
+
+1.) Crea y puebla colecciones
+
+db.createCollection("roles")
+db.roles.insertMany([
+     {
+        "_id": "rol1",
+        "nombre": "Administrador",
+        "permisos": [
+          "crear_asignaciones",
+          "editar_asignaciones",
+          "eliminar_asignaciones",
+          "ver_asignaciones",
+          "gestionar_residentes",
+          "gestionar_usuarios",
+          "gestionar_roles",
+          "ver_reportes",
+          "configurar_sistema"
+        ]
+      },
+      {
+        "_id": "rol2",
+        "nombre": "Encargado de menús",
+        "permisos": [
+          "crear_asignaciones",
+          "editar_asignaciones",
+          "eliminar_asignaciones",
+          "ver_asignaciones",
+          "ver_residentes"
+        ]
+      }
+])
+
+
+db.createCollection("tipo_comida")
+db.tipo_comida.insertMany([
+    {
+        "_id": 1,
+        "nombre": "Desayuno"
+      },
+      {
+        "_id": 2,
+        "nombre": "Comida"
+      },
+      {
+        "_id": 3,
+        "nombre": "Cena"
+      }
+])
+
+
+db.createCollection("tipos_dieta")
+db.tipos_dieta.insertMany([
+     {
+        "_id": "diet1",
+        "codigo": "BASAL",
+        "nombre": "Dieta Basal",
+        "descripcion": "Dieta normal y equilibrada",
+        "estandar": "",
+        "creadoEn": {
+          "$date": "2025-05-07T11:00:00Z"
+        }
+      },
+      {
+        "_id": "diet2",
+        "codigo": "FACIL_MASTICACION",
+        "nombre": "Fácil masticación / triturada / líquida",
+        "descripcion": "Para dificultades de masticación o deglución (IDDSI nivel 4)",
+        "estandar": "IDDSI nivel 4",
+        "creadoEn": {
+          "$date": "2025-05-07T11:00:00Z"
+        }
+      }
+])
+
+
+db.createCollection("alergenos")
+db.alergenos.insertMany([
+ {
+        "_id": "alerg1",
+        "nombre": "Gluten",
+        "descripcion": "Presente en trigo, cebada, centeno y sus derivados."
+      },
+      {
+        "_id": "alerg2",
+        "nombre": "Crustáceos",
+        "descripcion": "Camarones, langosta, cangrejo y similares."
+      },
+      {
+        "_id": "alerg3",
+        "nombre": "Huevo",
+        "descripcion": "Incluye huevo de gallina y alimentos que lo contienen."
+      }
+])
+
+
+db.createCollection("catering")
+db.catering.insertMany([
+    {
+        "_id": "cat01",
+        "nombreEmpresa": "Catering Gasca",
+        "personaContacto": "María Pérez",
+        "telefono": "600123456",
+        "correo": "maria@gasca.com"
+      },
+      {
+        "_id": "cat02",
+        "nombreEmpresa": "Gastrolunch S.L.",
+        "personaContacto": "Javier López",
+        "telefono": "600654321",
+        "correo": "javier@gastrolunch.com"
+      },
+      {
+        "_id": "cat03",
+        "nombreEmpresa": "Catering Iruña",
+        "personaContacto": "Ane Garmendia",
+        "telefono": "600789123",
+        "correo": "ane@iruña.com"
+      }
+])
+
+
+db.createCollection("usuarios")
+db.usuarios.insertMany([
+    {
+        "_id": "u1",
+        "nombre": "Carla Siles",
+        "correo": "carla.siles@residencia.org",
+        "contrasena": "latina",
+        "rolId": "rol1",
+        "creadoEn": {
+          "$date": "2025-05-07T09:00:00.000Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-07T09:00:00.000Z"
+        }
+      },
+      {
+        "_id": "u2",
+        "nombre": "Silvia Rodriguez",
+        "correo": "silvia.rodriguez@residencia.org",
+        "contrasena": "cosita",
+        "rolId": "rol2",
+        "creadoEn": {
+          "$date": "2025-05-07T09:10:00.000Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-07T09:10:00.000Z"
+        }
+      },
+      {
+        "_id": "u3",
+        "nombre": "Orlando",
+        "correo": "orlandito.colombiano@residencia.org",
+        "contrasena": "arepas",
+        "rolId": "rol4",
+        "creadoEn": {
+          "$date": "2025-05-07T09:10:00.000Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-07T09:10:00.000Z"
+        }
+      }
+])
+
+
+db.createCollection("residentes")
+db.residentes.insertMany([
+    {
+        "_id": "res1",
+        "nombre": "Maria Jesus",
+        "apellidos": "Gonzalez",
+        "fechaNacimiento": {
+          "$date": {
+            "$numberLong": "-1168905600000"
+          }
+        },
+        "sexo": "M",
+        "alergiasId": [
+          "alerg16"
+        ],
+        "tipoDietaIds": [
+          "diet1"
+        ],
+        "notasEspeciales": "No le gusta la carne de ternera",
+        "creadoEn":  {
+          "$date": "2025-05-07T10:00:00.000Z"
+        },
+        "actualizadoEn": {
+          "$date":"2025-05-07T10:00:00.000Z"
+        }
+      },
+      {
+        "_id": "res2",
+        "nombre": "José",
+        "apellidos": "Rodríguez",
+        "fechaNacimiento": {
+          "$date": {
+            "$numberLong": "-929404800000"
+          }
+        },
+        "sexo": "H",
+        "alergiasId": [
+          "alerg7"
+        ],
+        "tipoDietaIds": [
+          "diet4"
+        ],
+        "notasEspeciales": "Requiere control de presión arterial",
+        "creadoEn": {
+          "$date": "2025-05-07T11:00:00.000Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-07T11:00:00.000Z"
+        }
+      }
+])
+
+
+
+db.createCollection("platos")
+db.platos.insertMany([
+     {
+        "_id": "dish1",
+        "nombre": "Gachas de avena con fruta",
+        "descripcion": "Avena cocida en leche con fruta variada",
+        "ingredientes": [
+          "avena",
+          "leche",
+          "azúcar",
+          "fruta variada"
+        ],
+        "alergenos": [
+          "alerg19",
+          "alerg23"
+        ],
+        "tipoDietaIds": [
+          "diet1",
+          "diet2",
+          "diet3",
+          "diet5"
+        ],
+        "tipoComida": 1,
+        "creadoPor": "u2",
+        "creadoEn": {
+          "$date": "2025-05-07T12:00:00.000Z"
+        },
+        "actualizadoEn": {
+          "$date":"2025-05-07T12:00:00.000Z"
+        }
+      },
+      {
+        "_id": "dish2",
+        "nombre": "Tortilla francesa",
+        "descripcion": "Huevos batidos con un toque de aceite",
+        "ingredientes": [
+          "huevo",
+          "aceite",
+          "sal"
+        ],
+        "alergenos": [
+          "alerg24"
+        ],
+        "tipoDietaIds": [
+          "diet1",
+          "diet2",
+          "diet5"
+        ],
+        "tipoComida": 1,
+        "creadoPor": "u2",
+        "creadoEn": {
+          "$date":"2025-05-07T12:00:00.000Z"
+        },
+        "actualizadoEn": {
+          "$date":"2025-05-07T12:00:00.000Z"
+        }
+      }
+])
+
+
+db.createCollection("plantilla_menu")
+db.plantilla_menu.insertMany([
+    {
+        "_id": "tmpl1A",
+        "codigo": "A",
+        "nombre": "Ciclo A – Dieta Basal",
+        "tipoDietaId": "diet1",
+        "semanaCiclo": 1,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      },
+      {
+        "_id": "tmpl1B",
+        "codigo": "B",
+        "nombre": "Ciclo B – Dieta Basal",
+        "tipoDietaId": "diet1",
+        "semanaCiclo": 2,
+        "comidas": {
+          "1": {
+            "desayuno": [
+              "dish22"
+            ],
+            "comida": [
+              "dish28"
+            ],
+            "cena": [
+              "dish29"
+            ]
+          },
+          "2": {
+            "desayuno": [
+              "dish23"
+            ],
+            "comida": [
+              "dish30"
+            ],
+            "cena": [
+              "dish16"
+            ]
+          },
+          "3": {
+            "desayuno": [
+              "dish24"
+            ],
+            "comida": [
+              "dish8"
+            ],
+            "cena": [
+              "dish17"
+            ]
+          },
+          "4": {
+            "desayuno": [
+              "dish25"
+            ],
+            "comida": [
+              "dish9"
+            ],
+            "cena": [
+              "dish18"
+            ]
+          },
+          "5": {
+            "desayuno": [
+              "dish26"
+            ],
+            "comida": [
+              "dish10"
+            ],
+            "cena": [
+              "dish19"
+            ]
+          },
+          "6": {
+            "desayuno": [
+              "dish27"
+            ],
+            "comida": [
+              "dish11"
+            ],
+            "cena": [
+              "dish20"
+            ]
+          },
+          "7": {
+            "desayuno": [
+              "dish1"
+            ],
+            "comida": [
+              "dish12"
+            ],
+            "cena": [
+              "dish21"
+            ]
+          }
+        },
+        "creadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        },
+        "actualizadoEn": {
+          "$date": "2025-05-12T13:00:00Z"
+        }
+      }
+])
+
+
+
+db.createCollection("asignaciones")
+db.asignaciones.insertMany([
+    {
+        "_id": "asign01",
+        "residenteId": "res1",
+        "plantillaMenuId": "tmpl1A",
+        "fecha": {
+          "$date": "2025-05-12T08:00:00.000Z"
+        },
+        "tipoComida": 1,
+        "platoIds": [
+          "dish1"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": {
+          "$date": "2025-05-12T08:05:00.000Z"
+        }
+      },
+      {
+        "_id": "asign02",
+        "residenteId": "res1",
+        "plantillaMenuId": "tmpl1A",
+        "fecha": {
+          "$date": "2025-05-12T13:00:00.000Z"
+        },
+        "tipoComida": 2,
+        "platoIds": [
+          "dish8"
+        ],
+        "cateringIdAsig": "cat01",
+        "asignadoPor": "u2",
+        "asignadoEn": {
+          "$date": "2025-05-12T13:05:00.000Z"
+        }
+      }
+])
+
+
+db.createCollection("registro_incidencias")
+db.registro_incidencias.insertMany([
+    {
+        "_id": "inc1",
+        "tipoIncidencia": "plato_no_servido",
+        "entidadId": "assign3",
+        "descripcion": "El residente no recibió la crema de calabacín en la comida",
+        "reportadoPor": "u3",
+        "fechaHora": {
+          "$date": "2025-05-12T13:10:00Z"
+        },
+        "detalles": {
+          "residenteId": "res1",
+          "tipoComida": "comida",
+          "platoEsperado": [
+            "dish8"
+          ]
+        }
+      },
+      {
+        "_id": "inc2",
+        "tipoIncidencia": "plato_equivocado",
+        "entidadId": "assign7",
+        "descripcion": "Se sirvió puré de zanahoria en lugar de puré de verduras",
+        "reportadoPor": "u3",
+        "fechaHora": {
+          "$date": "2025-05-12T19:07:00Z"
+        },
+        "detalles": {
+          "residenteId": "res2",
+          "tipoComida": "cena",
+          "platoEntregado": [
+            "dish14"
+          ],
+          "platoCorrecto": [
+            "dish15"
+          ]
+        }
+      }
+])
