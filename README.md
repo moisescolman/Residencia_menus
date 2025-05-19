@@ -18,8 +18,6 @@ Con esta base de datos se cubren todos los flujos de trabajo necesarios para:
 
 ## Estructura de la base de datos
 
-La exportación contiene las siguientes **colecciones**: :contentReference[oaicite:0]{index=0}:contentReference[oaicite:1]{index=1}
-
 - **roles**  
   Define cuatro roles con permisos granulares (administrador, encargado de menús, empresa de catering, usuario de consulta). :contentReference[oaicite:2]{index=2}:contentReference[oaicite:3]{index=3}
 
@@ -139,4 +137,13 @@ db.residencia_menus.find().limit(5)  # Ver 5 documentos de ejemplo
 4. Explora las colecciones y documentos
 
 
+###** Exportar para poder subir al github**
+
+``bash
+# Ver Todas las Bases de Datos:
+mongosh --eval "db.adminCommand('listDatabases')"
+
+```bash
+//// Crear Carpeta y Exportar la Base de Datos 
+mkdir -p mongodb_export && mongodump --db residencia_menus --out mongodb_export
 
