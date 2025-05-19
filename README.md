@@ -128,7 +128,7 @@ use residencia_menus
 show collections
 db.residencia_menus.find().limit(5) 
 
-### 5. Acceder a la Base de Datos con MongoDB Compass
+## 5. Acceder a la Base de Datos con MongoDB Compass
 
 1. Abre MongoDB Compass
 2. Conéctate usando la URL: `mongodb://localhost:27017`
@@ -136,7 +136,7 @@ db.residencia_menus.find().limit(5)
 4. Explora las colecciones y documentos
 
 
-### 6. Exportar para poder subir al github
+## 6. Exportar para poder subir al github
 
 ``bash
 # Ver Todas las Bases de Datos:
