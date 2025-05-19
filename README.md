@@ -126,8 +126,7 @@ mongosh --eval "db.getMongo().getDBs()"
 mongosh
 use residencia_menus
 show collections
-db.residencia_menus.find().limit(5)  # Ver 5 documentos de ejemplo
-
+db.residencia_menus.find().limit(5) 
 
 ### 5. Acceder a la Base de Datos con MongoDB Compass
 
