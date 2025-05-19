@@ -121,6 +121,7 @@ Confirma que la base de datos se ha restaurado correctamente:
 ```bash
 # Ver todas las bases de datos disponibles
 mongosh --eval "db.getMongo().getDBs()"
+```
 
 # Conectarse a la base de datos y listar sus colecciones
 mongosh
@@ -142,7 +143,7 @@ db.residencia_menus.find().limit(5)
 # Ver Todas las Bases de Datos:
 mongosh --eval "db.adminCommand('listDatabases')"
 
-```bash
 //// Crear Carpeta y Exportar la Base de Datos 
 mkdir -p mongodb_export && mongodump --db residencia_menus --out mongodb_export
+```
 
