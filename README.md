@@ -139,8 +139,9 @@ db.residencia_menus.find().limit(5)
 
 ## 6. Exportar para poder subir al github
 
+
+### Ver Todas las Bases de Datos:
 ``bash
-# Ver Todas las Bases de Datos:
 mongosh --eval "db.adminCommand('listDatabases')"
 
 //// Crear Carpeta y Exportar la Base de Datos 
