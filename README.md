@@ -137,7 +137,7 @@ db.residencia_menus.find().limit(5)  # Ver 5 documentos de ejemplo
 4. Explora las colecciones y documentos
 
 
-###** Exportar para poder subir al github**
+### 6. Exportar para poder subir al github
 
 ``bash
 # Ver Todas las Bases de Datos:
